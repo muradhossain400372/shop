@@ -126,3 +126,14 @@
 }
 
 </style>
+<script>
+document.addEventListener("click", function(e) {
+    const btn = e.target.closest(".view-btn");
+    if (btn) {
+        const link = btn.closest(".item-link");
+        if (link) {
+            window.open(link.href, "_blank");
+        }
+    }
+});
+</script>
