@@ -40,42 +40,42 @@
 </div>
 </section>
 <style>
-/* container */
-  .affiliate-grid {
+/* ===== GRID CONTAINER ===== */
+.affiliate-grid {
     display: grid;
-    gap: 12px; /* space between items */
-    grid-template-columns: repeat(4, 1fr); /* desktop: 4 columns */
+    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
     align-items: start;
     margin: 0 auto;
-    max-width: 1280px; /* optional: center & limit width */
+    max-width: 1280px;
     padding: 12px;
     box-sizing: border-box;
-  }
+}
 
-  /* each item */
-  .affiliate-grid .grid-item {
-    display: block;               /* anchors fill the grid cell */
-    text-decoration: none;
+/* ===== GRID ITEM ===== */
+.grid-item {
+    position: relative;
     overflow: hidden;
-    border-radius: 8px;          /* rounded corners (optional) */
-    background: #fff;            /* fallback bg */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06); /* subtle shadow (optional) */
-  }
+    border-radius: 0px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.60);
+}
 
-  /* images: responsive and keep aspect ratio */
-  .affiliate-grid .grid-item img {
+/* ===== IMAGE STYLING ===== */
+.grid-item img {
     display: block;
     width: 100%;
-    height: 220px;               /* fixed height for consistent rows */
-    object-fit: cover;           /* crop to fill cell nicely */
-    border-radius: 8px;          /* match anchor corners (will be clipped) */
-  }
+    height: 270px;
+    object-fit: cover;
+    border-radius: 0px;
+}
 
+/* ===== CLICKABLE AREA ===== */
 .item-link {
     position: relative;
     display: block;
 }
 
+/* ===== ORANGE BUTTON ===== */
 .view-btn {
     position: absolute;
     bottom: 12px;
@@ -84,19 +84,21 @@
     background: linear-gradient(135deg, #ff7a00, #ff5400);
     color: #fff;
     padding: 10px 18px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 30px;
     text-transform: uppercase;
     pointer-events: none; /* button ke click korle anchor e jabe */
     box-shadow: 0 3px 8px rgba(0,0,0,0.25);
     border: 1px solid rgba(255,255,255,0.3);
 }
 
+/* ===== HIDE TRACKING PIXEL ===== */
 .grid-item img[width="1"][height="1"] {
     display: none !important;
 }
 
+/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
     .affiliate-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -113,6 +115,7 @@
     }
 }
 
+/* ===== SMALL PHONES ===== */
 @media (max-width: 420px) {
     .affiliate-grid {
         grid-template-columns: repeat(1, 1fr);
@@ -121,4 +124,5 @@
         height: 250px;
     }
 }
+
 </style>
