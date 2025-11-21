@@ -128,13 +128,22 @@
 
 </style>
 <script>
-document.addEventListener("click", function(e) {
-    const btn = e.target.closest(".view-btn");
-    if (btn) {
-        const link = btn.closest(".item-link");
-        if (link) {
+document.addEventListener("click", function (e) {
+
+    // user clicked on the button text or the button itself
+    if (e.target.classList.contains("view-btn")) {
+
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        // find anchor link which contains the button
+        let link = e.target.closest("a");
+
+        if (link && link.href) {
             window.open(link.href, "_blank");
         }
     }
+
 });
 </script>
